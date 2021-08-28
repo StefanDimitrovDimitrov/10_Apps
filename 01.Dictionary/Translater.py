@@ -24,7 +24,7 @@ def translate(w):
         return "The word doesn't exist. Please double check it."
 
 
-word = input("Enter word and I will translate it for you Iva: ")
+word = input("Enter word and I give you a definition: ")
 
 output = translate(word)
 
