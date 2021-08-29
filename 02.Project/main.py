@@ -23,8 +23,7 @@ Volcano name:<br>
 Height: %s m
 """
 
-location = [38.58, -99.09]
-map = folium.Map(location=location, zoom_start=6, tiles="Stamen Terrain")
+map = folium.Map(location=[38.58, -99.09], zoom_start=6, tiles="Stamen Terrain")
 
 fgv = folium.FeatureGroup(name='Volcanoes')
 
@@ -40,6 +39,8 @@ fgp.add_child(folium.GeoJson(data=open('world.json', 'r', encoding='utf-8-sig').
                             style_function=lambda x: {'fillColor': 'green'
                             if x['properties']['POP2005'] < 10000000
                             else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 else 'red'}))
+
+
 
 map.add_child(fgv)
 map.add_child(fgp)
