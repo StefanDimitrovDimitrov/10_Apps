@@ -17,6 +17,7 @@ def color_producer(elevation):
         return 'red'
 
 
+
 html = """
 Volcano name:<br>
 <a href="https://www.google.com/search?q=%%22%s%%22" target="_blank">%s</a><br>
@@ -36,11 +37,12 @@ for lt, ln, el, name in zip(lat, lon, elev, name):
 fgp = folium.FeatureGroup(name='Population')
 
 fgp.add_child(folium.GeoJson(data=open('world.json', 'r', encoding='utf-8-sig').read(),
-                            style_function=lambda x: {'fillColor': 'green'
+                            style_function=
+                            lambda x: {'fillColor':'green'
                             if x['properties']['POP2005'] < 10000000
-                            else 'orange' if 10000000 <= x['properties']['POP2005'] < 20000000 else 'red'}))
-
-
+                            else 'orange'
+                            if 10000000 <= x['properties']['POP2005'] < 20000000
+                            else 'red'}))
 
 map.add_child(fgv)
 map.add_child(fgp)
