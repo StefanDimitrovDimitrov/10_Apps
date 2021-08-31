@@ -6,7 +6,13 @@
 1. Open cmd in the folder where is you app
 2. command: heroku login
 3. c: heroku create "name of the app"
-4.
+4. git init
+5. git add .
+6. git commit -m 'first commit'
+7. heroku git:remote --app apptest22
+8. git push heroku master
+
+   
 
 
 
